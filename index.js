@@ -27,12 +27,14 @@ exports.handler = function(event, context){
     s3.getObject(params, function(err, data){
         console.log("Optimizing file....", params, ' .... Start!');
         
-        let plugins =  [
-            pngToJpeg({quality: 90}),
-            imageminJpegtran({ progressive: true })
-        ];
+        let plugins =  [];
         if(data.ContentType == 'image/jpeg') {
             plugins =  [
+                imageminJpegtran({ progressive: true })
+            ];
+        } else if(data.ContentType == 'image/png') {
+            plugins =  [
+                pngToJpeg({quality: 90}),
                 imageminJpegtran({ progressive: true })
             ];
         }
