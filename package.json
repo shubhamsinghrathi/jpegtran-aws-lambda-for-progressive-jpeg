@@ -1,0 +1,17 @@
+{
+  "name": "compress-image",
+  "version": "1.0.0",
+  "description": "testing imagemin npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lianboi Thomte",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.79.0",
+    "imagemin": "^5.3.1",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.0.1"
+  }
+}
